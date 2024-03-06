@@ -15,9 +15,10 @@ public class Main {
 
         System.out.println();
 
-        Thread threadFour = new Thread(new ThreadForCounterWithNonStaticMethod());
-        Thread threadFive = new Thread(new ThreadForCounterWithNonStaticMethod());
-        Thread threadSix = new Thread(new ThreadForCounterWithNonStaticMethod());
+        ThreadForCounterWithNonStaticMethod runnableImpl = new ThreadForCounterWithNonStaticMethod();
+        Thread threadFour = new Thread(runnableImpl);
+        Thread threadFive = new Thread(runnableImpl);
+        Thread threadSix = new Thread(runnableImpl);
         threadFour.start();
         threadFive.start();
         threadSix.start();
